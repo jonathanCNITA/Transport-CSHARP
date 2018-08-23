@@ -16,30 +16,24 @@ namespace TransportsCommun
         static void Main(string[] args)
         {
             Console.WriteLine("Starting Common transport project");
-
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
             //-- Position du campus: y:45.18549, x:5.72792
-            string urlApi = "http://data.metromobilite.fr/api/linesNear/json?x=5.72792&y=45.18549&dist=800&details=true";
-
-            WebRequest request = WebRequest.Create(urlApi);
-            WebResponse response = request.GetResponse();
-            Console.WriteLine("Reponse status : " + ((HttpWebResponse)response).StatusDescription);
-
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string responseFromServer = reader.ReadToEnd();
-            
-            Console.WriteLine("------------------------------");
-            Console.WriteLine(responseFromServer);
-            reader.Close();
-            response.Close();
-
-            Console.WriteLine("------------------------------");
-            JArray json = JArray.Parse(responseFromServer);
-            foreach (JObject n in json)
+            MetroRequest LinesReq = new MetroRequest();
+            List<Station> stations = JsonConvert.DeserializeObject<List<Station>>(LinesReq.GetResponseAsString());
+            foreach( Station station in stations )
             {
-                Console.WriteLine(n["name"]);
+                Console.WriteLine(station.name);
             }
 
+            Console.WriteLine("----------------------------------");
+
+            // Tricks founded on stackOverFlow : https://stackoverflow.com/questions/15829309/remove-item-have-same-key-in-list-c-sharp
+            List<Station> stationsFiltered = stations.GroupBy(t => t.name).Select(g => g.First()).ToList();
+            foreach (Station station in stationsFiltered)
+            {
+                Console.WriteLine(station.name);
+            }
+           
             Console.ReadLine();
         }
     }
