@@ -20,6 +20,8 @@ namespace TransportsCommun
             //-- Position du campus: y:45.18549, x:5.72792
             MetroRequest LinesReq = new MetroRequest();
             List<Station> stations = JsonConvert.DeserializeObject<List<Station>>(LinesReq.GetResponseAsString());
+
+            //-- Log initial returned stations
             foreach( Station station in stations )
             {
                 Console.WriteLine(station.name);
@@ -35,14 +37,11 @@ namespace TransportsCommun
                 }
                 else
                 {
-                    List<string> newLinesList = new List<string>();
-                    newLinesList = stationsDict[station.name].Concat(station.lines).ToList();
-                    stationsDict[station.name] = newLinesList;
-                    
+                    stationsDict[station.name] = (stationsDict[station.name].Concat(station.lines).ToList()).Distinct().ToList();
                 }
             }
 
-            //-- Log result
+            //-- Log stations cleaned
             foreach (KeyValuePair<string, List<string>> station in stationsDict)
             {
                 Console.WriteLine(station.Key);
