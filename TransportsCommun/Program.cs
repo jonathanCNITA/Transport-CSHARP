@@ -33,6 +33,13 @@ namespace TransportsCommun
             reader.Close();
             response.Close();
 
+            Console.WriteLine("------------------------------");
+            JArray json = JArray.Parse(responseFromServer);
+            foreach (JObject n in json)
+            {
+                Console.WriteLine(n["name"]);
+            }
+
             Console.ReadLine();
         }
     }
