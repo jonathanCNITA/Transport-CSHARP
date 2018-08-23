@@ -26,14 +26,33 @@ namespace TransportsCommun
             }
 
             Console.WriteLine("----------------------------------");
-
-            // Tricks founded on stackOverFlow : https://stackoverflow.com/questions/15829309/remove-item-have-same-key-in-list-c-sharp
-            List<Station> stationsFiltered = stations.GroupBy(t => t.name).Select(g => g.First()).ToList();
-            foreach (Station station in stationsFiltered)
+            Dictionary<string, List<string>> stationsDict = new Dictionary<string, List<string>>();
+            foreach (Station station in stations)
             {
-                Console.WriteLine(station.name);
+                if (!stationsDict.ContainsKey(station.name))
+                {
+                    stationsDict.Add(station.name, station.lines);
+                }
+                else
+                {
+                    List<string> newLinesList = new List<string>();
+                    newLinesList = stationsDict[station.name].Concat(station.lines).ToList();
+                    stationsDict[station.name] = newLinesList;
+                    
+                }
             }
-           
+
+            //-- Log result
+            foreach (KeyValuePair<string, List<string>> station in stationsDict)
+            {
+                Console.WriteLine(station.Key);
+                foreach(string line in station.Value)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+            
+
             Console.ReadLine();
         }
     }
