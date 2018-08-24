@@ -13,6 +13,5 @@ namespace TransportsCommun
         public double lon { get; set; }
         public double lat { get; set; }
         public List<string> lines { get; set; }
-
     }
 }
