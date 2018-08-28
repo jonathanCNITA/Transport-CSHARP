@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TransportsCommun
+namespace MetroApi
 {
-    class Station
+    public class StationModel
     {
         public string id { get; set; }
         public string name { get; set; }

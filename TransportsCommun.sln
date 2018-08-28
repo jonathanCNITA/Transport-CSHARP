@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportsCommun", "TransportsCommun\TransportsCommun.csproj", "{8280DBEA-0E68-449A-8988-C2E89EFDEDC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroApi", "MetroApi\MetroApi.csproj", "{4D880E4D-FFCD-466B-A53F-1A73E6CD119E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8280DBEA-0E68-449A-8988-C2E89EFDEDC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8280DBEA-0E68-449A-8988-C2E89EFDEDC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8280DBEA-0E68-449A-8988-C2E89EFDEDC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D880E4D-FFCD-466B-A53F-1A73E6CD119E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D880E4D-FFCD-466B-A53F-1A73E6CD119E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D880E4D-FFCD-466B-A53F-1A73E6CD119E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D880E4D-FFCD-466B-A53F-1A73E6CD119E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

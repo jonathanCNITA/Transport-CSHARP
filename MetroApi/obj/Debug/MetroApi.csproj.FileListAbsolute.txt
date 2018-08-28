@@ -1,0 +1,6 @@
+C:\Users\jonathan.courat\source\repos\TransportsCommun\MetroApi\bin\Debug\MetroApi.dll
+C:\Users\jonathan.courat\source\repos\TransportsCommun\MetroApi\bin\Debug\MetroApi.pdb
+C:\Users\jonathan.courat\source\repos\TransportsCommun\MetroApi\obj\Debug\MetroApi.csprojAssemblyReference.cache
+C:\Users\jonathan.courat\source\repos\TransportsCommun\MetroApi\obj\Debug\MetroApi.csproj.CoreCompileInputs.cache
+C:\Users\jonathan.courat\source\repos\TransportsCommun\MetroApi\obj\Debug\MetroApi.dll
+C:\Users\jonathan.courat\source\repos\TransportsCommun\MetroApi\obj\Debug\MetroApi.pdb

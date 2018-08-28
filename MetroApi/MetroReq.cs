@@ -1,30 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.IO;
 
-namespace TransportsCommun
+namespace MetroApi
 {
-    class MetroRequest
+    public class MetroReq
     {
         string UrlApi { get; set; }
 
-        public MetroRequest()
+        public MetroReq()
         {
             UrlApi = "http://data.metromobilite.fr/api/linesNear/json?x=5.72792&y=45.18549&dist=500&details=true";
         }
 
-        public MetroRequest(string apiRoute)
+        public MetroReq(string apiRoute)
         {
             UrlApi = apiRoute;
         }
 
-        public MetroRequest(string posX, string posY, string dist)
+        public MetroReq(string posX, string posY, string dist)
         {
-            UrlApi = "http://data.metromobilite.fr/api/linesNear/json?x=" + posX +"&y=" + posY +"&dist=" + dist + "&details=true";
+            UrlApi = "http://data.metromobilite.fr/api/linesNear/json?x=" + posX + "&y=" + posY + "&dist=" + dist + "&details=true";
         }
 
         public string GetResponseAsString()
@@ -38,7 +38,5 @@ namespace TransportsCommun
             response.Close();
             return responseFromServer;
         }
-
-
     }
 }

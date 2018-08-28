@@ -4,14 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TransportsCommun
+namespace MetroApi
 {
-    class ToolBox
+    /// <summary>
+    /// My tool box with various methods to help the treatment of json Datas
+    /// </summary>
+    public class ToolBox
     {
-        public static Dictionary<string, List<string>> GetListNameWithoutDuplicateAsDictionnary(List<Station> stationList)
+        /// <summary>
+        /// GetListNameWithoutDuplicateAsDictionnary
+        /// </summary>
+        /// <param name="stationList"> my parameter</param>
+        /// <returns>a dictionary without "doublon" for station names and lines</returns>
+        public static Dictionary<string, List<string>> GetListNameWithoutDuplicateAsDictionnary(List<StationModel> stationList)
         {
             Dictionary<string, List<string>> stationsDict = new Dictionary<string, List<string>>();
-            foreach (Station station in stationList)
+            foreach (StationModel station in stationList)
             {
                 if (!stationsDict.ContainsKey(station.name))
                 {
@@ -25,6 +33,11 @@ namespace TransportsCommun
             return stationsDict;
         }
 
+        /// <summary>
+        /// ConvertMetroSecondToReadableTime
+        /// </summary>
+        /// <param name="totalSecs"> my parameter</param>
+        /// <returns>Return a readable string from the time in second since midnight like the f****** metro api</returns>
         public static string ConvertMetroSecondToReadableTime(int totalSecs)
         {
             int hours = totalSecs / 3600;
@@ -32,6 +45,5 @@ namespace TransportsCommun
             int seconds = totalSecs % 60;
             return "next: " + hours + " : " + minutes;
         }
-        
     }
 }
