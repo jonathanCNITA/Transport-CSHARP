@@ -8,12 +8,15 @@ namespace TransportsCommun
 {
     class Schedule
     {
-        public string stopId { get; set; }
-        public List<int> trips { get; set; }
-        public string stopName { get; set; }
-        public double lat { get; set; }
-        public double lon { get; set; }
-        public string parentStation { get; set; }
+        //public string stopId { get; set; }
+        //public List<int> trips { get; set; }
+        //public string stopName { get; set; }
+        //public double lat { get; set; }
+        //public double lon { get; set; }
+        //public string parentStation { get; set; }
+        public string LineName { get; set; }
+        public string StationName { get; set; }
+        public List<string> scheduleList { get; set; }
     }
 
     public class Arret
@@ -25,6 +28,7 @@ namespace TransportsCommun
         public double lon { get; set; }
         public string parentStation { get; set; }
     }
+
 
     public class PrevNext
     {
